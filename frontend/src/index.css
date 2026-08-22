@@ -1,4 +1,1517 @@
-body {
+/* =====================================================
+   NSS ABOUT PAGE
+===================================================== */
+
+.about-page {
+  width: 100%;
+  background: #ffffff;
+  color: #000000;
+  overflow: hidden;
+}
+
+.about-container {
+  width: 62%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+
+/* =====================================================
+   COMMON SECTION HEADINGS
+===================================================== */
+
+.section-intro {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  margin-bottom: 32px;
+}
+
+.section-intro > span {
+  color: #0b1f3a;
+  font-size: 14px;
+  font-weight: 700;
+  padding-top: 5px;
+}
+
+.section-label {
+  position: relative;
+  display: inline-block;
+
+  margin: 0 0 8px;
+
+  color: #0b1f3a;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+.section-label::after {
+  content: "";
+
+  display: block;
+
+  width: 42px;
+  height: 2px;
+
+  margin-top: 8px;
+
+  background: #0b1f3a;
+}
+
+.section-intro h2 {
   margin: 0;
-  font-family: Arial, sans-serif;
+
+  color: #0b1f3a;
+
+  font-size: 36px;
+  line-height: 1.2;
+
+  font-weight: 700;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.about-hero {
+  position: relative;
+
+  min-height: 560px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 70px 8%;
+
+  background-image: url("/images/nss-about-bg.jpg");
+  background-size: cover;
+  background-position: center;
+
+  color: white;
+
+  text-align: center;
+}
+
+.about-hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: rgba(7, 25, 48, 0.60);
+}
+
+.about-hero-content {
+  position: relative;
+  z-index: 2;
+
+  max-width: 850px;
+  margin: auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-tag {
+  display: inline-block;
+
+  margin-bottom: 15px;
+
+  color: #d5e2ef;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 3px;
+}
+
+.about-hero h1 {
+  margin: 0;
+
+  color: white;
+
+  font-size: 56px;
+  line-height: 1.12;
+
+  font-weight: 700;
+
+  text-align: center;
+}
+
+.hero-line {
+  width: 65px;
+  height: 3px;
+
+  margin: 20px auto;
+
+  background: white;
+}
+
+.about-hero-content > p {
+  max-width: 720px;
+
+  margin: 0 auto 22px;
+
+  color: white;
+
+  font-size: 16px;
+  line-height: 1.75;
+
+  text-align: center;
+}
+
+
+/* Hero Motto */
+
+.hero-motto {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 5px;
+
+  padding: 9px 17px;
+
+  border: 1px solid rgba(255, 255, 255, 0.45);
+
+  border-radius: 30px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(4px);
+}
+
+.hero-motto span {
+  color: #b8cadc;
+
+  font-family: Georgia, serif;
+
+  font-size: 23px;
+}
+
+.hero-motto strong {
+  color: white;
+
+  font-size: 14px;
+
+  letter-spacing: 1px;
+}
+
+
+/* =====================================================
+   NSS AT A GLANCE
+===================================================== */
+
+.glance-section {
+  padding: 45px 0;
+
+  background: #ffffff;
+}
+
+.glance-heading {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 55px;
+
+  align-items: end;
+
+  margin-bottom: 38px;
+}
+
+.glance-heading h2 {
+  margin: 0;
+
+  color: #0b1f3a;
+
+  font-size: 36px;
+
+  line-height: 1.25;
+}
+
+.glance-intro {
+  max-width: 500px;
+
+  margin: 0;
+
+  color: #000000;
+
+  font-size: 15px;
+
+  line-height: 1.7;
+}
+
+
+/* Features */
+
+.glance-features {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  border-top: 1px solid #dce3e9;
+  border-bottom: 1px solid #dce3e9;
+}
+
+.glance-feature {
+  display: flex;
+
+  gap: 18px;
+
+  padding: 27px 22px;
+
+  border-right: 1px solid #dce3e9;
+}
+
+.glance-feature:last-child {
+  border-right: none;
+}
+
+.feature-number {
+  color: #8799aa;
+
+  font-size: 16px;
+
+  font-weight: 700;
+}
+
+.glance-feature h3 {
+  margin: 0 0 8px;
+
+  color: #0b1f3a;
+
+  font-size: 19px;
+}
+
+.glance-feature p {
+  margin: 0;
+
+  color: #000000;
+
+  font-size: 13.5px;
+
+  line-height: 1.65;
+}
+
+
+/* =====================================================
+   HISTORY
+===================================================== */
+
+.history-section {
+  padding: 65px 0;
+
+  background: #f5f7fa;
+}
+
+.history-layout {
+  display: grid;
+
+  grid-template-columns: 0.85fr 1.15fr;
+
+  gap: 60px;
+
+  align-items: start;
+}
+
+
+/* Timeline */
+
+.history-timeline {
+  position: relative;
+
+  padding-left: 32px;
+}
+
+.history-timeline::before {
+  content: "";
+
+  position: absolute;
+
+  left: 7px;
+  top: 10px;
+  bottom: 10px;
+
+  width: 2px;
+
+  background: #b8c7d6;
+}
+
+.timeline-item {
+  position: relative;
+
+  padding: 0 0 30px 25px;
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-dot {
+  position: absolute;
+
+  left: -1px;
+  top: 5px;
+
+  width: 15px;
+  height: 15px;
+
+  border: 3px solid #f5f7fa;
+
+  border-radius: 50%;
+
+  background: #0b1f3a;
+
+  box-shadow: 0 0 0 2px #0b1f3a;
+}
+
+.timeline-year {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: #0b1f3a;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+}
+
+.timeline-item h3 {
+  margin: 0 0 6px;
+
+  color: #0b1f3a;
+
+  font-size: 19px;
+}
+
+.timeline-item p {
+  margin: 0;
+
+  color: #000000;
+
+  font-size: 13.5px;
+
+  line-height: 1.65;
+}
+
+
+/* History Text */
+
+.history-text {
+  padding: 3px 0;
+}
+
+.history-text p {
+  margin: 0 0 13px;
+
+  color: #000000;
+
+  font-size: 15.5px;
+
+  line-height: 1.75;
+}
+
+.history-text p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =====================================================
+   MOTTO
+===================================================== */
+
+.motto-section {
+  position: relative;
+
+  padding: 65px 0;
+
+  overflow: hidden;
+
+  background: #0b1f3a;
+
+  color: white;
+}
+
+.motto-background-mark {
+  position: absolute;
+
+  right: 5%;
+  top: -70px;
+
+  color: rgba(255, 255, 255, 0.05);
+
+  font-size: 330px;
+
+  font-family: Georgia, serif;
+
+  line-height: 1;
+}
+
+.motto-container {
+  position: relative;
+
+  z-index: 1;
+
+  width: 82%;
+  max-width: 1200px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: 0.85fr 1.15fr;
+
+  gap: 60px;
+
+  align-items: center;
+}
+
+.motto-title > span {
+  display: block;
+
+  margin-bottom: 15px;
+
+  color: #a9c0d8;
+
+  font-size: 13px;
+
+  font-weight: 700;
+}
+
+.motto-title .section-label {
+  color: #a9c0d8;
+}
+
+.motto-title h2 {
+  margin: 8px 0 0;
+
+  color: white;
+
+  font-size: 46px;
+
+  line-height: 1.15;
+
+  font-weight: 700;
+}
+
+.motto-content {
+  padding-left: 30px;
+
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.motto-quote {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 8px;
+
+  margin-bottom: 20px;
+}
+
+.motto-quote span {
+  color: #a9c0d8;
+
+  font-family: Georgia, serif;
+
+  font-size: 50px;
+
+  line-height: 0.8;
+}
+
+.motto-quote p {
+  margin: 0;
+
+  color: white;
+
+  font-size: 20px;
+
+  line-height: 1.45;
+
+  font-weight: 500;
+}
+
+.motto-content > p {
+  margin: 0 0 13px;
+
+  color: #ffffff;
+
+  font-size: 15px;
+
+  line-height: 1.75;
+}
+
+
+/* =====================================================
+   NSS EMBLEM
+   COMPACT VERSION
+===================================================== */
+
+.identity-section {
+  padding: 30px 0;
+
+  background: white;
+}
+
+.identity-layout {
+  display: grid;
+
+  grid-template-columns: 300px 1fr;
+
+  gap: 50px;
+
+  align-items: center;
+}
+
+.identity-image {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+}
+
+/* Reduced empty circular space */
+
+
+
+.image-circle {
+  width: 400px;
+  height: 390px;
+}
+
+.image-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.identity-text h3 {
+  margin: 0 0 12px;
+
+  color: #0b1f3a;
+
+  font-size: 24px;
+}
+
+.identity-text > p {
+  margin: 0 0 12px;
+
+  color: #000000;
+
+  font-size: 15px;
+
+  line-height: 1.7;
+}
+
+
+/* Meaning Cards */
+
+.meaning-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 10px;
+
+  margin-top: 20px;
+}
+
+.meaning-card {
+  padding: 14px;
+
+  background: #f5f7fa;
+
+  border-radius: 8px;
+}
+
+.meaning-icon {
+  display: block;
+
+  width: 13px;
+  height: 13px;
+
+  margin-bottom: 8px;
+
+  border-radius: 50%;
+}
+
+.meaning-icon.red {
+  background: #c62828;
+}
+
+.meaning-icon.blue {
+  background: #0b1f3a;
+}
+
+.meaning-icon.wheel {
+  background: #788da3;
+}
+
+.meaning-card h4 {
+  margin: 0 0 3px;
+
+  color: #0b1f3a;
+
+  font-size: 14px;
+}
+
+.meaning-card p {
+  margin: 0;
+
+  color: #000000;
+
+  font-size: 11.5px;
+
+  line-height: 1.4;
+}
+
+
+
+/* =====================================================
+   NSS BADGE
+   COMPACT VERSION
+===================================================== */
+
+.badge-section {
+  padding: 30px 0;
+
+  background: #f5f7fa;
+}
+
+.badge-layout {
+  display: grid;
+
+  grid-template-columns: 1.2fr 0.8fr;
+
+  gap: 50px;
+
+  align-items: center;
+}
+
+.badge-text h3 {
+  margin: 0 0 12px;
+
+  color: #0b1f3a;
+
+  font-size: 24px;
+}
+
+.badge-text p {
+  margin: 0 0 13px;
+
+  color: #000000;
+
+  font-size: 15px;
+
+  line-height: 1.7;
+}
+
+.badge-image {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+}
+
+/* Smaller badge container */
+
+.badge-circle {
+  width: 245px;
+  height: 245px;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  border: 6px solid #0b1f3a;
+
+  box-shadow:
+    0 0 0 8px #e8edf2,
+    0 12px 28px rgba(11, 31, 58, 0.12);
+
+  overflow: hidden;
+}
+
+.badge-circle img {
+  width: 185px;
+  height: 185px;
+
+  object-fit: contain;
+
+  border-radius: 50%;
+}
+
+
+/* =====================================================
+   AIM
+===================================================== */
+
+.aim-section {
+  padding: 45px 0;
+
+  background: white;
+}
+
+.aim-header {
+  display: flex;
+
+  gap: 18px;
+
+  align-items: flex-start;
+
+  margin-bottom: 30px;
+}
+
+.aim-header > span {
+  color: #0b1f3a;
+
+  font-size: 14px;
+
+  font-weight: 700;
+}
+
+.aim-header h2 {
+  margin: 0;
+
+  color: #0b1f3a;
+
+  font-size: 34px;
+}
+
+.aim-statement {
+  position: relative;
+
+  max-width: 900px;
+
+  margin: 0 auto 30px;
+
+  padding: 25px 35px;
+
+  background: #f4f7fa;
+
+  border-left: 4px solid #0b1f3a;
+}
+
+.aim-statement > span {
+  position: absolute;
+
+  left: 15px;
+  top: 5px;
+
+  color: #b7c6d5;
+
+  font-family: Georgia, serif;
+
+  font-size: 50px;
+}
+
+.aim-statement h3 {
+  margin: 0;
+
+  color: #0b1f3a;
+
+  font-size: 22px;
+
+  line-height: 1.45;
+
+  font-weight: 600;
+}
+
+.aim-content {
+  max-width: 900px;
+
+  margin: auto;
+}
+
+.aim-content p {
+  margin: 0 0 13px;
+
+  color: #000000;
+
+  font-size: 15px;
+
+  line-height: 1.75;
+}
+
+.aim-values {
+  max-width: 900px;
+
+  margin: 28px auto 0;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  border-top: 1px solid #dce3e9;
+
+  border-bottom: 1px solid #dce3e9;
+}
+
+.aim-values div {
+  padding: 17px;
+
+  text-align: center;
+
+  border-right: 1px solid #dce3e9;
+}
+
+.aim-values div:last-child {
+  border-right: none;
+}
+
+.aim-values span {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #7b8ea3;
+
+  font-size: 11px;
+}
+
+.aim-values h4 {
+  margin: 0;
+
+  color: #0b1f3a;
+
+  font-size: 14px;
+}
+
+
+
+/* =====================================================
+   OBJECTIVES
+===================================================== */
+
+/* =====================================================
+   OBJECTIVES SECTION
+===================================================== */
+
+.objectives-section {
+  padding: 40px 0;
+  background: #f5f7fa;
+}
+
+.objectives-heading {
+  max-width: 760px;
+  margin: 0 auto 40px;
+  text-align: center;
+}
+
+.section-tag {
+  display: inline-block;
+
+  margin-bottom: 10px;
+
+  color: #0b1f3a;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+.objectives-heading h2 {
+  margin: 0;
+
+  color: #0b1f3a;
+
+  font-size: 36px;
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+.objectives-heading h2 span {
+  color: #174f86;
+}
+
+.objectives-heading p {
+  margin: 14px auto 0;
+
+  max-width: 680px;
+
+  color: #66758a;
+
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+
+/* =====================================================
+   OBJECTIVES GRID
+===================================================== */
+
+.objectives-grid {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  column-gap: 23px;
+  row-gap: 35px;
+}
+
+
+/* =====================================================
+   OBJECTIVE CARD
+===================================================== */
+
+.objective-card {
+  position: relative;
+
+  background: #ffffff;
+
+  border: 1px solid #e1e7ee;
+
+  border-radius: 12px;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.objective-card:hover {
+  transform: translateY(-5px);
+
+  border-color: #c8d5e3;
+
+  box-shadow:
+    0 12px 28px rgba(11, 31, 58, 0.10);
+}
+
+
+/* =====================================================
+   OBJECTIVE IMAGE
+===================================================== */
+
+.objective-image {
+  width: 100%;
+  height: 180px;
+
+  overflow: hidden;
+}
+
+.objective-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition: transform 0.5s ease;
+}
+
+.objective-card:hover .objective-image img {
+  transform: scale(1.05);
+}
+
+
+/* =====================================================
+   OBJECTIVE CONTENT
+===================================================== */
+
+.objective-content {
+  padding: 18px 18px 20px;
+}
+
+.objective-content h3 {
+  margin: 0 0 8px;
+
+  color: #0b1f3a;
+
+  font-size: 17px;
+  line-height: 1.35;
+
+  font-weight: 700;
+}
+
+.objective-content p {
+  margin: 0;
+
+  color: #66758a;
+
+  font-size: 13.5px;
+  line-height: 1.6;
+}
+
+
+/* Small navy line at bottom */
+
+.objective-card::after {
+  content: "";
+
+  position: absolute;
+
+  left: 18px;
+  bottom: 0;
+
+  width: 30px;
+  height: 3px;
+
+  background: #0b1f3a;
+
+  transition: width 0.3s ease;
+}
+
+.objective-card:hover::after {
+  width: calc(100% - 36px);
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1000px) {
+
+  .objectives-grid {
+    grid-template-columns: repeat(2, 1fr);
+
+    column-gap: 18px;
+    row-gap: 18px;
+  }
+
+  .objective-image {
+    height: 190px;
+  }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+  .objectives-section {
+    padding: 55px 0;
+  }
+
+  .objectives-heading {
+    width: 88%;
+    margin-bottom: 32px;
+  }
+
+  .objectives-heading h2 {
+    font-size: 29px;
+  }
+
+  .objectives-heading p {
+    font-size: 14px;
+  }
+
+  .objectives-grid {
+    width: 88%;
+
+    grid-template-columns: 1fr;
+
+    gap: 16px;
+  }
+
+  .objective-image {
+    height: 200px;
+  }
+
+  .objective-content {
+    padding: 18px 18px 20px;
+  }
+
+  .objective-content h3 {
+    font-size: 18px;
+  }
+
+  .objective-content p {
+    font-size: 14px;
+  }
+}
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+  .objectives-section {
+    padding: 50px 0;
+  }
+
+  .objectives-heading {
+    margin-bottom: 30px;
+  }
+
+  .objectives-heading h2 {
+    font-size: 28px;
+  }
+
+  .objectives-heading p {
+    font-size: 14px;
+  }
+
+  .objectives-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .objective-image {
+    height: 190px;
+  }
+
+}
+
+/* =====================================================
+   RESPONSIVE - TABLET
+===================================================== */
+
+@media (max-width: 1000px) {
+
+  .about-container,
+  .motto-container {
+    width: 88%;
+  }
+
+  .glance-heading {
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+  }
+
+  .history-layout {
+    grid-template-columns: 1fr;
+
+    gap: 40px;
+  }
+
+  .motto-container {
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+  }
+
+  .motto-content {
+    padding-left: 0;
+
+    padding-top: 25px;
+
+    border-left: none;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .identity-layout,
+  .badge-layout {
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+  }
+
+  .identity-image {
+    order: -1;
+  }
+
+  .identity-text,
+  .badge-text {
+    text-align: center;
+  }
+
+  .meaning-grid {
+    max-width: 650px;
+
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .objectives-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+  .about-container,
+  .motto-container {
+    width: 88%;
+  }
+
+
+  /* Hero */
+
+  .about-hero {
+    min-height: 500px;
+
+    padding: 55px 7%;
+
+    background-position: center;
+  }
+
+  .about-hero h1 {
+    font-size: 40px;
+  }
+
+  .hero-tag {
+    font-size: 11px;
+
+    letter-spacing: 2px;
+  }
+
+  .about-hero-content > p {
+    font-size: 15px;
+  }
+
+
+  /* Sections */
+
+  .glance-section,
+  .history-section,
+  .identity-section,
+  .badge-section,
+  .aim-section,
+  .objectives-section {
+    padding: 50px 0;
+  }
+
+@media (max-width: 1000px) {
+  .objectives-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .objective-card {
+    min-height: 250px;
+  }
+}
+
+@media (max-width: 600px) {
+  .objectives-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .objective-card {
+    min-height: 220px;
+  }
+}
+  /* Glance */
+
+  .glance-heading {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+
+    margin-bottom: 30px;
+  }
+
+  .glance-heading h2 {
+    font-size: 30px;
+  }
+
+  .glance-features {
+    grid-template-columns: 1fr;
+  }
+
+  .glance-feature {
+    border-right: none;
+
+    border-bottom: 1px solid #dce3e9;
+  }
+
+  .glance-feature:last-child {
+    border-bottom: none;
+  }
+
+
+  /* Common Heading */
+
+  .section-intro {
+    gap: 12px;
+
+    margin-bottom: 28px;
+  }
+
+  .section-intro h2 {
+    font-size: 29px;
+  }
+
+
+  /* Motto */
+
+  .motto-section {
+    padding: 55px 0;
+  }
+
+  .motto-title h2 {
+    font-size: 39px;
+  }
+
+  .motto-content > p {
+    font-size: 15px;
+  }
+
+
+  /* Emblem */
+
+  .image-circle {
+    width: 220px;
+    height: 220px;
+  }
+
+  .image-circle img {
+    width: 160px;
+    height: 160px;
+  }
+
+
+  /* Badge */
+
+  .badge-circle {
+    width: 220px;
+    height: 220px;
+
+    border-width: 5px;
+
+    box-shadow:
+      0 0 0 6px #e8edf2,
+      0 10px 22px rgba(11, 31, 58, 0.10);
+  }
+
+  .badge-circle img {
+    width: 165px;
+    height: 165px;
+  }
+
+
+  /* Meaning */
+
+  .meaning-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  /* Aim */
+
+  .aim-statement {
+    padding: 24px 22px;
+  }
+
+  .aim-statement h3 {
+    font-size: 19px;
+  }
+
+  .aim-values {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .aim-values div:nth-child(2) {
+    border-right: none;
+  }
+
+  .aim-values div:nth-child(-n + 2) {
+    border-bottom: 1px solid #dce3e9;
+  }
+
+
+  /* Objectives */
+
+  .objectives-heading h2 {
+    font-size: 28px;
+  }
+
+  .objectives-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .objective-image {
+    height: 210px;
+  }
+
+  .objective-content {
+    padding: 21px 22px 23px;
+  }
+
+  .objective-content h3 {
+    font-size: 18px;
+  }
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 420px) {
+
+  .about-hero {
+    min-height: 480px;
+  }
+
+  .about-hero h1 {
+    font-size: 34px;
+  }
+
+  .about-hero-content > p {
+    font-size: 14px;
+  }
+
+  .glance-heading h2 {
+    font-size: 27px;
+  }
+
+  .section-intro h2 {
+    font-size: 27px;
+  }
+
+  .motto-title h2 {
+    font-size: 34px;
+  }
+
+  .image-circle {
+    width: 200px;
+    height: 200px;
+  }
+
+  .image-circle img {
+    width: 145px;
+    height: 145px;
+  }
+
+  .badge-circle {
+    width: 200px;
+    height: 200px;
+  }
+
+  .badge-circle img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .objective-image {
+    height: 190px;
+  }
+
+  .aim-values {
+    grid-template-columns: 1fr 1fr;
+  }
 }
