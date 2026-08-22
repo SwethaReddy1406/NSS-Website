@@ -1,22 +1,18 @@
-import { Link } from "react-router-dom";
-
 function Sidebar() {
   return (
     <aside className="sidebar">
       <nav>
+        <a href="/">Home</a>
 
-        <Link to="/">Home</Link>
+        <a href="/about">About Us</a>
 
-        <Link to="/about">About Us</Link>
+        <a href="/activities">Activities / Events</a>
 
-        <Link to="/activities">Activities / Events</Link>
+        <a href="/units">Units</a>
 
-        <Link to="/units">Units</Link>
+        <a href="/login">Login / Register</a>
 
-        <Link to="/login">Login / Register</Link>
-
-        <Link to="/contact">Contact Us</Link>
-
+        <a href="/contact">Contact Us</a>
       </nav>
     </aside>
   );
