@@ -1,3 +1,4 @@
+
 function Sidebar() {
   return (
     <aside className="sidebar">
@@ -10,7 +11,7 @@ function Sidebar() {
 
         <a href="/units">Units</a>
 
-        <a href="/login">Login / Register</a>
+        <a href="/alumni">Alumni</a>
 
         <a href="/contact">Contact Us</a>
       </nav>
@@ -19,3 +20,4 @@ function Sidebar() {
 }
 
 export default Sidebar;
+

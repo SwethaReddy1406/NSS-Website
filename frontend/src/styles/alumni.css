@@ -1,0 +1,436 @@
+/* =========================================================
+   ALUMNI PAGE
+========================================================= */
+
+.alumni-page {
+  width: 100%;
+  background: #ffffff;
+  color: #1f2937;
+  overflow-x: hidden;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.alumni-hero {
+  width: 100%;
+  min-height: 560px;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-image: url("/nss/alumni.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  color: #ffffff;
+}
+
+.alumni-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.68),
+    rgba(0, 0, 0, 0.42),
+    rgba(0, 0, 0, 0.58)
+  );
+}
+
+.alumni-hero-overlay {
+  position: relative;
+  z-index: 2;
+
+  width: 90%;
+  max-width: 900px;
+
+  padding: 60px 20px;
+
+  text-align: center;
+}
+
+.alumni-eyebrow {
+  margin: 0 0 18px;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  letter-spacing: 4px;
+  text-transform: uppercase;
+
+  color: #d1fae5;
+}
+
+.alumni-hero h1 {
+  margin: 0 0 22px;
+
+  font-size: clamp(52px, 7vw, 86px);
+  line-height: 1;
+
+  font-weight: 700;
+}
+
+.alumni-hero-text {
+  max-width: 720px;
+
+  margin: 0 auto;
+
+  font-size: 18px;
+  line-height: 1.8;
+
+  color: #f3f4f6;
+}
+
+.alumni-motto {
+  margin: 32px 0 0;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  letter-spacing: 5px;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   COMMON SECTION LABEL
+========================================================= */
+
+.alumni-section-label {
+  margin: 0 0 16px;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 3px;
+  text-transform: uppercase;
+
+  color: #16a34a;
+}
+
+
+/* =========================================================
+   INTRODUCTION
+========================================================= */
+
+.alumni-introduction {
+  width: 100%;
+
+  padding: 100px 7%;
+
+  background: #ffffff;
+}
+
+.alumni-intro-text {
+  max-width: 850px;
+
+  margin: 0 auto;
+
+  text-align: center;
+}
+
+.alumni-intro-text h2 {
+  margin: 0 0 28px;
+
+  font-size: clamp(34px, 4vw, 48px);
+  line-height: 1.15;
+
+  color: #14532d;
+}
+
+.alumni-intro-text > p:not(.alumni-section-label) {
+  margin: 0 auto 18px;
+
+  max-width: 780px;
+
+  font-size: 16px;
+  line-height: 1.85;
+
+  color: #5b6470;
+}
+
+
+/* =========================================================
+   ALUMNI MEMBERS
+========================================================= */
+
+.alumni-members {
+  width: 100%;
+
+  padding: 100px 7%;
+
+  background: #f6f9f7;
+}
+
+.alumni-heading {
+  max-width: 800px;
+
+  margin: 0 auto 55px;
+
+  text-align: center;
+}
+
+.alumni-heading h2 {
+  margin: 0 0 18px;
+
+  font-size: clamp(34px, 4vw, 46px);
+  line-height: 1.15;
+
+  color: #14532d;
+}
+
+.alumni-heading > p:last-child {
+  margin: 0;
+
+  font-size: 16px;
+  line-height: 1.7;
+
+  color: #687078;
+}
+
+
+/* =========================================================
+   ALUMNI GRID
+========================================================= */
+
+.alumni-grid {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 28px;
+}
+
+
+/* =========================================================
+   ALUMNI CARD
+========================================================= */
+
+.alumni-card {
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 1px solid #e4e9e5;
+
+  border-radius: 18px;
+
+  text-align: center;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.alumni-card:hover {
+  transform: translateY(-7px);
+
+  box-shadow: 0 18px 40px rgba(20, 83, 45, 0.10);
+}
+
+
+/* =========================================================
+   PROFILE IMAGE / INITIAL
+========================================================= */
+
+.alumni-profile-image {
+  width: 100%;
+  height: 150px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      #14532d,
+      #166534
+    );
+
+  color: #ffffff;
+}
+
+.alumni-profile-image span {
+  width: 76px;
+  height: 76px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.16);
+
+  border: 2px solid rgba(255, 255, 255, 0.45);
+
+  font-size: 30px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
+
+.alumni-card-content {
+  padding: 28px 26px 30px;
+}
+
+.alumni-batch {
+  display: inline-block;
+
+  margin-bottom: 10px;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  color: #16a34a;
+}
+
+.alumni-card h3 {
+  margin: 0 0 7px;
+
+  font-size: 22px;
+
+  color: #1f2937;
+}
+
+.alumni-role {
+  margin: 0 0 16px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  color: #64748b;
+}
+
+.alumni-description {
+  margin: 0;
+
+  font-size: 14px;
+  line-height: 1.7;
+
+  color: #6b7280;
+}
+
+
+
+/* =========================================================
+   CLOSING
+========================================================= */
+
+.alumni-closing {
+  width: 100%;
+
+  padding: 90px 7%;
+
+  background: #ffffff;
+
+  text-align: center;
+}
+
+.alumni-closing h2 {
+  margin: 0 0 20px;
+
+  font-size: clamp(34px, 4vw, 46px);
+  line-height: 1.15;
+
+  color: #14532d;
+}
+
+.alumni-closing > p:last-child {
+  max-width: 700px;
+
+  margin: 0 auto;
+
+  font-size: 16px;
+  line-height: 1.8;
+
+  color: #6b7280;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .alumni-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .alumni-hero {
+    min-height: 500px;
+  }
+
+}
+
+
+@media (max-width: 650px) {
+
+  .alumni-hero {
+    min-height: 470px;
+
+    background-position: center;
+  }
+
+  .alumni-hero-overlay {
+    padding: 45px 15px;
+  }
+
+  .alumni-hero h1 {
+    font-size: 50px;
+  }
+
+  .alumni-hero-text {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .alumni-motto {
+    font-size: 12px;
+    letter-spacing: 3px;
+  }
+
+  .alumni-introduction,
+  .alumni-members,
+  .alumni-beyond,
+  .alumni-closing {
+    padding: 70px 6%;
+  }
+
+  .alumni-grid {
+    grid-template-columns: 1fr;
+
+    gap: 22px;
+  }
+
+  .alumni-intro-text h2,
+  .alumni-heading h2 {
+    font-size: 32px;
+  }
+
+  .alumni-beyond h2 {
+    font-size: 34px;
+  }
+
+}
