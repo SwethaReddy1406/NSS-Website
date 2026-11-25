@@ -1,3 +1,4 @@
+import { apiFetch } from "../api.js";
 
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
@@ -29,7 +30,7 @@ function Events() {
     setError("");
 
     try {
-      const response = await fetch(API, {
+      const response = await apiFetch(API, {
         credentials: "include",
       });
 
@@ -60,7 +61,7 @@ function Events() {
 
   // Get CSRF token
   const getCsrfToken = async () => {
-    const response = await fetch("/api/auth/csrf", {
+    const response = await apiFetch("/api/auth/csrf", {
       credentials: "include",
     });
 
@@ -117,7 +118,7 @@ function Events() {
       const url = editingId ? `${API}/${editingId}` : API;
       const method = editingId ? "PUT" : "POST";
 
-      const response = await fetch(url, {
+      const response = await apiFetch(url, {
         method,
         credentials: "include",
         headers: {
@@ -155,7 +156,7 @@ function Events() {
     try {
       const token = await getCsrfToken();
 
-      const response = await fetch(`${API}/${event.id}`, {
+      const response = await apiFetch(`${API}/${event.id}`, {
         method: "DELETE",
         credentials: "include",
         headers: {

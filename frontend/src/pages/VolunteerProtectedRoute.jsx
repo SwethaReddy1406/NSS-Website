@@ -1,3 +1,4 @@
+import { apiFetch } from "../api.js";
 import { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
 
@@ -5,7 +6,7 @@ function VolunteerProtectedRoute({ children }) {
   const [authenticated, setAuthenticated] = useState(null);
 
   useEffect(() => {
-    fetch("/api/auth/me", {
+    apiFetch("/api/auth/me", {
       credentials: "include",
     })
       .then((response) => {

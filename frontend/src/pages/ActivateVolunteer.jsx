@@ -1,3 +1,4 @@
+import { apiFetch } from "../api.js";
 import { useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 
@@ -41,7 +42,7 @@ function ActivateVolunteer() {
     setLoading(true);
 
     try {
-      const csrfResponse = await fetch("/api/auth/csrf", {
+      const csrfResponse = await apiFetch("/api/auth/csrf", {
         method: "GET",
         credentials: "include",
       });
@@ -49,7 +50,7 @@ function ActivateVolunteer() {
       const csrfData = await csrfResponse.json();
       const csrfToken = csrfData.token || getCsrfToken();
 
-      const response = await fetch("/api/volunteer-activation/activate", {
+      const response = await apiFetch("/api/volunteer-activation/activate", {
         method: "POST",
         credentials: "include",
         headers: {

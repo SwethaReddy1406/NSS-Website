@@ -1,3 +1,4 @@
+import { apiFetch } from "../api.js";
 import { useEffect, useState } from "react";
 
 function NotificationBar() {
@@ -10,7 +11,7 @@ function NotificationBar() {
 
     async function fetchAnnouncements() {
       try {
-        const response = await fetch(
+        const response = await apiFetch(
           "/api/notifications/public/announcements"
         );
 

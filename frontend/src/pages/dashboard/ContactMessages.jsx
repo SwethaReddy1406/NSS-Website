@@ -1,3 +1,4 @@
+import { apiFetch } from "../../api.js";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -15,7 +16,7 @@ function ContactMessages() {
     setError("");
 
     try {
-      const response = await fetch(API, {
+      const response = await apiFetch(API, {
         credentials: "include",
       });
 
@@ -42,7 +43,7 @@ function ContactMessages() {
   }, []);
 
   async function getCsrfToken() {
-    const response = await fetch("/api/auth/csrf", {
+    const response = await apiFetch("/api/auth/csrf", {
       credentials: "include",
     });
 
@@ -61,7 +62,7 @@ function ContactMessages() {
     try {
       const csrf = await getCsrfToken();
 
-      const response = await fetch(`${API}/${id}/status?status=${status}`, {
+      const response = await apiFetch(`${API}/${id}/status?status=${status}`, {
         method: "PUT",
         credentials: "include",
         headers: {
@@ -91,7 +92,7 @@ function ContactMessages() {
     try {
       const csrf = await getCsrfToken();
 
-      const response = await fetch(`${API}/${id}`, {
+      const response = await apiFetch(`${API}/${id}`, {
         method: "DELETE",
         credentials: "include",
         headers: {

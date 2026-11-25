@@ -1,3 +1,4 @@
+import { apiFetch } from "../api.js";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Activities.css";
@@ -32,7 +33,7 @@ function Activities() {
     setError("");
 
     try {
-      const response = await fetch(`${API}/admin`, {
+      const response = await apiFetch(`${API}/admin`, {
         credentials: "include",
       });
 
@@ -63,7 +64,7 @@ function Activities() {
 
   // Get CSRF token
   const getCsrfToken = async () => {
-    const response = await fetch("/api/auth/csrf", {
+    const response = await apiFetch("/api/auth/csrf", {
       credentials: "include",
     });
 
@@ -83,7 +84,7 @@ function Activities() {
       const formData = new FormData();
       formData.append("file", file);
 
-      const response = await fetch(`${API}/upload-image`, {
+      const response = await apiFetch(`${API}/upload-image`, {
         method: "POST",
         credentials: "include",
         headers: {
@@ -196,7 +197,7 @@ function Activities() {
       const url = editingId ? `${API}/${editingId}` : API;
       const method = editingId ? "PUT" : "POST";
 
-      const response = await fetch(url, {
+      const response = await apiFetch(url, {
         method,
         credentials: "include",
         headers: {
@@ -236,7 +237,7 @@ function Activities() {
     try {
       const token = await getCsrfToken();
 
-      const response = await fetch(`${API}/${activity.id}`, {
+      const response = await apiFetch(`${API}/${activity.id}`, {
         method: "DELETE",
         credentials: "include",
         headers: {

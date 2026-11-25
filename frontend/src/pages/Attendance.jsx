@@ -1,3 +1,4 @@
+import { apiFetch } from "../api.js";
 
 import { useEffect, useState } from "react";
 import "./Attendance.css";
@@ -32,9 +33,9 @@ function Attendance() {
     async function loadInitialData() {
       try {
         const [aRes, eRes, vRes] = await Promise.all([
-          fetch(`${API}/activities/admin`, { credentials: "include" }),
-          fetch(`${API}/events`, { credentials: "include" }),
-          fetch(`${API}/volunteers`, { credentials: "include" }),
+          apiFetch(`${API}/activities/admin`, { credentials: "include" }),
+          apiFetch(`${API}/events`, { credentials: "include" }),
+          apiFetch(`${API}/volunteers`, { credentials: "include" }),
         ]);
 
         if (!aRes.ok || !eRes.ok || !vRes.ok) {
@@ -87,7 +88,7 @@ function Attendance() {
             ? `${API}/attendance/activity/${selectedItem}?date=${attendanceDate}`
             : `${API}/attendance/event/${selectedItem}?date=${attendanceDate}`;
 
-        const response = await fetch(endpoint, {
+        const response = await apiFetch(endpoint, {
           credentials: "include",
         });
 
@@ -166,7 +167,7 @@ function Attendance() {
     setMessage("");
 
     try {
-      const csrfResponse = await fetch(`${API}/auth/csrf`, {
+      const csrfResponse = await apiFetch(`${API}/auth/csrf`, {
         credentials: "include",
       });
 
@@ -212,7 +213,7 @@ function Attendance() {
 
         if (existingRecord) {
           // Update the existing record, don't create a duplicate
-          response = await fetch(`${API}/attendance/${existingRecord.id}`, {
+          response = await apiFetch(`${API}/attendance/${existingRecord.id}`, {
             method: "PUT",
             credentials: "include",
             headers: {
@@ -234,7 +235,7 @@ function Attendance() {
             remarks: volunteerRemarks,
           };
 
-          response = await fetch(`${API}/attendance`, {
+          response = await apiFetch(`${API}/attendance`, {
             method: "POST",
             credentials: "include",
             headers: {
@@ -270,7 +271,7 @@ function Attendance() {
           ? `${API}/attendance/activity/${selectedItem}?date=${attendanceDate}`
           : `${API}/attendance/event/${selectedItem}?date=${attendanceDate}`;
 
-      const refresh = await fetch(endpoint, {
+      const refresh = await apiFetch(endpoint, {
         credentials: "include",
       });
 

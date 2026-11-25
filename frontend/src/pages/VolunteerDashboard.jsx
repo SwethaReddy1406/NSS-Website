@@ -1,3 +1,4 @@
+import { apiFetch } from "../api.js";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -16,7 +17,7 @@ function VolunteerDashboard() {
   const [error, setError] = useState("");
 
   async function csrf() {
-    const res = await fetch("/api/auth/csrf", {
+    const res = await apiFetch("/api/auth/csrf", {
       credentials: "include",
     });
     const data = await res.json();
@@ -29,13 +30,13 @@ function VolunteerDashboard() {
 
     try {
       const results = await Promise.all([
-        fetch("/api/auth/me", { credentials: "include" }),
-        fetch("/api/notifications", { credentials: "include" }),
-        fetch("/api/notifications/count", { credentials: "include" }),
-        fetch("/api/activities", { credentials: "include" }),
-        fetch("/api/events", { credentials: "include" }),
-        fetch("/api/attendance/my", { credentials: "include" }),
-        fetch("/api/volunteers/my-profile", { credentials: "include" }),
+        apiFetch("/api/auth/me", { credentials: "include" }),
+        apiFetch("/api/notifications", { credentials: "include" }),
+        apiFetch("/api/notifications/count", { credentials: "include" }),
+        apiFetch("/api/activities", { credentials: "include" }),
+        apiFetch("/api/events", { credentials: "include" }),
+        apiFetch("/api/attendance/my", { credentials: "include" }),
+        apiFetch("/api/volunteers/my-profile", { credentials: "include" }),
       ]);
 
       if (!results[0].ok) {
@@ -99,7 +100,7 @@ function VolunteerDashboard() {
     try {
       const token = await csrf();
 
-      const res = await fetch(`/api/notifications/${id}/read`, {
+      const res = await apiFetch(`/api/notifications/${id}/read`, {
         method: "PUT",
         credentials: "include",
         headers: { "X-XSRF-TOKEN": token },
@@ -123,7 +124,7 @@ function VolunteerDashboard() {
     try {
       const token = await csrf();
 
-      const res = await fetch("/api/notifications/read-all", {
+      const res = await apiFetch("/api/notifications/read-all", {
         method: "PUT",
         credentials: "include",
         headers: { "X-XSRF-TOKEN": token },
@@ -147,7 +148,7 @@ function VolunteerDashboard() {
     try {
       const token = await csrf();
 
-      await fetch("/api/auth/logout", {
+      await apiFetch("/api/auth/logout", {
         method: "POST",
         credentials: "include",
         headers: { "X-XSRF-TOKEN": token },

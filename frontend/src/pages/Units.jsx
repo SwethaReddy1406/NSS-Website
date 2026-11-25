@@ -1,3 +1,4 @@
+import { apiFetch } from "../api.js";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import React,{useEffect,useState} from "react";
@@ -259,7 +260,7 @@ function Units() {
   useEffect(() => {
     let isActive = true;
 
-    fetch("/api/units")
+    apiFetch("/api/units")
       .then((response) => {
         if (!response.ok) {
           throw new Error(`Failed to load units: ${response.status}`);

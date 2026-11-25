@@ -1,3 +1,4 @@
+import { apiFetch } from "../../api.js";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -17,7 +18,7 @@ function Notifications() {
     setError("");
 
     try {
-      const response = await fetch(`${API}/sent`, {
+      const response = await apiFetch(`${API}/sent`, {
         credentials: "include",
       });
 
@@ -52,7 +53,7 @@ function Notifications() {
     setSending(true);
 
     try {
-      const csrfResponse = await fetch("/api/auth/csrf", {
+      const csrfResponse = await apiFetch("/api/auth/csrf", {
         credentials: "include",
       });
 
@@ -62,7 +63,7 @@ function Notifications() {
 
       const csrf = await csrfResponse.json();
 
-      const response = await fetch(`${API}/announce`, {
+      const response = await apiFetch(`${API}/announce`, {
         method: "POST",
         credentials: "include",
         headers: {

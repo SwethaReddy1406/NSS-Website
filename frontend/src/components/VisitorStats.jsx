@@ -1,3 +1,4 @@
+import { apiFetch } from "../api.js";
 import { useEffect, useState } from "react";
 
 function VisitorStats() {
@@ -10,7 +11,7 @@ function VisitorStats() {
   useEffect(() => {
     async function fetchStats() {
       try {
-        const response = await fetch("/api/statistics");
+        const response = await apiFetch("/api/statistics");
 
         if (!response.ok) {
           throw new Error("Failed to fetch statistics");

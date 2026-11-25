@@ -1,3 +1,4 @@
+import { apiFetch } from "../api.js";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -16,7 +17,7 @@ function Login() {
     setLoading(true);
 
     try {
-      const csrfResponse = await fetch("/api/auth/csrf", {
+      const csrfResponse = await apiFetch("/api/auth/csrf", {
         credentials: "include",
       });
 
@@ -26,7 +27,7 @@ function Login() {
 
       const csrfData = await csrfResponse.json();
 
-      const response = await fetch("/api/auth/login", {
+      const response = await apiFetch("/api/auth/login", {
         method: "POST",
         credentials: "include",
         headers: {
@@ -48,7 +49,7 @@ function Login() {
           : "ROLE_VOLUNTEER";
 
       if (data.role !== expectedRole) {
-        await fetch("/api/auth/logout", {
+        await apiFetch("/api/auth/logout", {
           method: "POST",
           credentials: "include",
           headers: {

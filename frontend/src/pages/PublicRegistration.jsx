@@ -1,3 +1,4 @@
+import { apiFetch } from "../api.js";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./PublicRegistration.css";
@@ -29,7 +30,7 @@ function PublicRegistration() {
     setSuccess("");
 
     try {
-      const csrfResponse = await fetch("/api/auth/csrf", {
+      const csrfResponse = await apiFetch("/api/auth/csrf", {
         credentials: "include",
       });
 
@@ -37,7 +38,7 @@ function PublicRegistration() {
 
       const csrfData = await csrfResponse.json();
 
-      const response = await fetch("/api/volunteers", {
+      const response = await apiFetch("/api/volunteers", {
         method: "POST",
         credentials: "include",
         headers: {

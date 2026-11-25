@@ -1,3 +1,4 @@
+import { apiFetch } from "../api.js";
 
 import { useEffect } from "react";
 
@@ -26,7 +27,7 @@ function Home() {
 
     async function recordVisit() {
       try {
-        const csrfResponse = await fetch("/api/auth/csrf", {
+        const csrfResponse = await apiFetch("/api/auth/csrf", {
           credentials: "include",
         });
 
@@ -36,7 +37,7 @@ function Home() {
 
         const csrfData = await csrfResponse.json();
 
-        const response = await fetch("/api/statistics/visit", {
+        const response = await apiFetch("/api/statistics/visit", {
           method: "POST",
           credentials: "include",
           headers: {

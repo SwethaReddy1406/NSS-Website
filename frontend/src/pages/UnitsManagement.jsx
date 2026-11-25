@@ -1,3 +1,4 @@
+import { apiFetch } from "../api.js";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./UnitsManagement.css";
@@ -27,7 +28,7 @@ function UnitsManagement() {
     setError("");
 
     try {
-      const response = await fetch(API, {
+      const response = await apiFetch(API, {
         credentials: "include",
       });
 
@@ -56,7 +57,7 @@ function UnitsManagement() {
   };
 
   const getCsrfToken = async () => {
-    const response = await fetch("/api/auth/csrf", {
+    const response = await apiFetch("/api/auth/csrf", {
       credentials: "include",
     });
 
@@ -106,7 +107,7 @@ function UnitsManagement() {
       const url = editingId ? `${API}/${editingId}` : API;
       const method = editingId ? "PUT" : "POST";
 
-      const response = await fetch(url, {
+      const response = await apiFetch(url, {
         method,
         credentials: "include",
         headers: {
@@ -147,7 +148,7 @@ function UnitsManagement() {
     try {
       const token = await getCsrfToken();
 
-      const response = await fetch(`${API}/${unit.id}`, {
+      const response = await apiFetch(`${API}/${unit.id}`, {
         method: "DELETE",
         credentials: "include",
         headers: {

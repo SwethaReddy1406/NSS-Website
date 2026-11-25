@@ -1,3 +1,4 @@
+import { apiFetch } from "../api.js";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./dashboard/Dashboard.css";
@@ -24,12 +25,12 @@ function Dashboard() {
           eventsResponse,
           notificationResponse,
         ] = await Promise.all([
-          fetch("/api/auth/me", { credentials: "include" }),
-          fetch("/api/units", { credentials: "include" }),
-          fetch("/api/activities", { credentials: "include" }),
-          fetch("/api/volunteers", { credentials: "include" }),
-          fetch("/api/events", { credentials: "include" }),
-          fetch("/api/notifications/count", { credentials: "include" }),
+          apiFetch("/api/auth/me", { credentials: "include" }),
+          apiFetch("/api/units", { credentials: "include" }),
+          apiFetch("/api/activities", { credentials: "include" }),
+          apiFetch("/api/volunteers", { credentials: "include" }),
+          apiFetch("/api/events", { credentials: "include" }),
+          apiFetch("/api/notifications/count", { credentials: "include" }),
         ]);
 
         if (meResponse.ok) {
@@ -78,13 +79,13 @@ function Dashboard() {
 
   async function handleLogout() {
     try {
-      const csrfResponse = await fetch("/api/auth/csrf", {
+      const csrfResponse = await apiFetch("/api/auth/csrf", {
         credentials: "include",
       });
 
       const csrfData = await csrfResponse.json();
 
-      await fetch("/api/auth/logout", {
+      await apiFetch("/api/auth/logout", {
         method: "POST",
         credentials: "include",
         headers: {

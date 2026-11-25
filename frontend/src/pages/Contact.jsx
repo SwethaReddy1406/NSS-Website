@@ -1,3 +1,4 @@
+import { apiFetch } from "../api.js";
 
 import React, { useState } from "react";
 import "./Contact.css";
@@ -78,7 +79,7 @@ export default function Contact() {
     setSubmitted(false);
 
     try {
-      const response = await fetch("/api/contact", {
+      const response = await apiFetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

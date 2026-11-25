@@ -1,3 +1,4 @@
+import { apiFetch } from "../api.js";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
@@ -5,7 +6,7 @@ function Header() {
   const [visits, setVisits] = useState(0);
 
   useEffect(() => {
-    fetch("/api/statistics")
+    apiFetch("/api/statistics")
       .then((response) => response.json())
       .then((data) => setVisits(data.visits))
       .catch((error) => console.error("Visit stats error:", error));

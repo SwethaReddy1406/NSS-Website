@@ -1,3 +1,4 @@
+import { apiFetch } from "../api.js";
 import { useEffect, useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -12,7 +13,7 @@ function PublicActivities() {
   useEffect(() => {
     const loadActivities = async () => {
       try {
-        const response = await fetch("/api/activities");
+        const response = await apiFetch("/api/activities");
 
         if (!response.ok) {
           throw new Error("Failed to load activities");

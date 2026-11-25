@@ -1,3 +1,4 @@
+import { apiFetch } from "../api.js";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./VolunteerManagement.css";
@@ -39,7 +40,7 @@ function VolunteerManagement() {
     setError("");
 
     try {
-      const response = await fetch(API, {
+      const response = await apiFetch(API, {
         credentials: "include",
       });
 
@@ -62,7 +63,7 @@ function VolunteerManagement() {
 
   // Get CSRF token
   const getCsrfToken = async () => {
-    const response = await fetch("/api/auth/csrf", {
+    const response = await apiFetch("/api/auth/csrf", {
       credentials: "include",
     });
 
@@ -132,7 +133,7 @@ function VolunteerManagement() {
       const url = editingId ? `${API}/${editingId}` : API;
       const method = editingId ? "PUT" : "POST";
 
-      const response = await fetch(url, {
+      const response = await apiFetch(url, {
         method,
         credentials: "include",
         headers: {
@@ -184,7 +185,7 @@ function VolunteerManagement() {
     try {
       const token = await getCsrfToken();
 
-      const response = await fetch(
+      const response = await apiFetch(
         `${API}/${volunteer.id}/status?status=${status}`,
         {
           method: "PATCH",
@@ -218,7 +219,7 @@ function VolunteerManagement() {
     try {
       const token = await getCsrfToken();
 
-      const response = await fetch(
+      const response = await apiFetch(
         `/api/volunteer-activation/${volunteer.id}/generate`,
         {
           method: "POST",
@@ -275,7 +276,7 @@ function VolunteerManagement() {
     try {
       const token = await getCsrfToken();
 
-      const response = await fetch(`${API}/${volunteer.id}`, {
+      const response = await apiFetch(`${API}/${volunteer.id}`, {
         method: "DELETE",
         credentials: "include",
         headers: {
