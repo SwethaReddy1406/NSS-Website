@@ -1,7 +1,10 @@
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 function About() {
   return (
     <div className="about-page">
 
+    <Header />
       {/* ================= HERO ================= */}
 
       <section className="about-hero">
@@ -825,7 +828,7 @@ function About() {
               <div className="objective-image">
 
                 <img
-                  src="https://dbkncollege.ac.in/web/public/user/img/about/nss.jpg"
+                  src="IMG-20250819-WA0009.jpg"
                   alt="NSS community awareness rally"
                 />
 
@@ -856,10 +859,9 @@ function About() {
               <div className="objective-image">
 
                 <img
-                  src="https://www.rvils.edu.in/img/Campus/IMG_0566.JPG"
-                  alt="NSS volunteers working together"
-                />
-
+  src="/IMG-20250310-WA0018.jpg"
+  alt="NSS volunteers participating in community service"
+/>
                
 
               </div>
@@ -885,11 +887,10 @@ function About() {
             <div className="objective-card">
 
               <div className="objective-image">
-
-                <img
-                  src="https://images.deccanchronicle.com/dc-Cover-f266jo7anrss967tih411302j0-20180911012745.Medi.jpeg"
-                  alt="NSS volunteers providing disaster relief"
-                />
+<img
+  src="/IMG-20250819-WA0021.jpg"
+  alt="NSS volunteers working together as a team"
+/>
 
                
 
@@ -917,10 +918,10 @@ function About() {
 
               <div className="objective-image">
 
-                <img
-                  src="https://nss.gov.in/sites/default/files/fee8a768-529a-46f9-bbd3-7b3708183295.jpg"
-                  alt="NSS national integration activity"
-                />
+               <img
+  src="/IMG-20250311-WA0029.jpg"
+  alt="NSS volunteers promoting national integration and unity"
+/>
 
                
 
@@ -945,9 +946,9 @@ function About() {
           </div>
 
         </div>
-
+  
       </section>
-
+<Footer />
     </div>
   );
 }

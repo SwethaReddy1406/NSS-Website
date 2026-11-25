@@ -1,3 +1,21 @@
 node_modules/
 dist/
 .env
+
+# Java / Maven
+backend/target/
+
+# IDE files
+.idea/
+.classpath
+.project
+.settings/
+
+# Local backup and accidental files
+/frontend/react-router-dom
+/frontend/src/pages/Units.jsx.backup
+
+# Backend local files and backups
+/backend/cookies.txt
+/backend/*.backup
+/backend/**/*.backup

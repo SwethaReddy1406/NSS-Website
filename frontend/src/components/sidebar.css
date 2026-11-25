@@ -1,0 +1,100 @@
+```css
+/* ==============================
+   HORIZONTAL NAVIGATION BAR
+   ============================== */
+
+.sidebar {
+  width: 100%;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e9ef;
+  box-shadow: 0 2px 8px rgba(18, 53, 104, 0.08);
+  position: relative;
+  z-index: 100;
+}
+
+.sidebar nav {
+  min-height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 30px;
+}
+
+.sidebar nav a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 11px 18px;
+
+  color: #123568;
+  background: transparent;
+
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+
+  border-radius: 8px;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.sidebar nav a:hover {
+  color: #ffffff;
+  background: #123568;
+  transform: translateY(-1px);
+}
+
+/* Active/current page */
+
+.sidebar nav a.active {
+  color: #ffffff;
+  background: #123568;
+}
+
+/* ==============================
+   TABLET
+   ============================== */
+
+@media (max-width: 900px) {
+  .sidebar nav {
+    gap: 4px;
+    padding: 8px 15px;
+  }
+
+  .sidebar nav a {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+}
+
+/* ==============================
+   MOBILE
+   ============================== */
+
+@media (max-width: 650px) {
+  .sidebar nav {
+    justify-content: flex-start;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding: 8px 12px;
+
+    scrollbar-width: none;
+  }
+
+  .sidebar nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .sidebar nav a {
+    flex-shrink: 0;
+    padding: 9px 13px;
+    font-size: 12px;
+  }
+}
+```
+

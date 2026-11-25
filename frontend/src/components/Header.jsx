@@ -1,59 +1,64 @@
+import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+
 function Header() {
+  const [visits, setVisits] = useState(0);
+
+  useEffect(() => {
+    fetch("/api/statistics")
+      .then((response) => response.json())
+      .then((data) => setVisits(data.visits))
+      .catch((error) => console.error("Visit stats error:", error));
+  }, []);
+
   return (
-    <header className="header">
+    <>
+      <header className="header">
+        <div className="header-logos">
+          <img
+            src="/RGUKT Logo.png"
+            alt="RGUKT Logo"
+            className="nss-logo"
+          />
 
-      {/* LEFT — INSTITUTION LOGOS */}
-      <div className="header-logos">
-        <img
-          src="RGUKT Logo.png"
-          alt="National Service Scheme"
-          className="nss-logo"
-        />
+          <div className="logo-divider"></div>
 
-        <div className="logo-divider"></div>
-
-        <img
-          src="nsslogo.png"
-          alt="RGUKT Basar"
-          className="rgukt-logo"
-        />
-      </div>
-
-
-      {/* CENTER — NSS TITLE */}
-      <div className="header-title">
-        <h1>National Service Scheme</h1>
-        <h2>RGUKT Basar</h2>
-        <p>“Not Me But You”</p>
-      </div>
-
-
-      {/* RIGHT — WEBSITE INFORMATION */}
-      <div className="header-actions">
-
-        <div className="stat">
-          <span>👁</span>
-          <div>
-            <strong>1,245</strong>
-            <small>Views</small>
-          </div>
+          <img
+            src="/nsslogo.png"
+            alt="NSS Logo"
+            className="rgukt-logo"
+          />
         </div>
 
-        <div className="stat">
-          <span>👥</span>
-          <div>
-            <strong>856</strong>
-            <small>Visitors</small>
-          </div>
+        <div className="header-title">
+          <h1>National Service Scheme</h1>
+          <h2>RGUKT Basar</h2>
+          <p>“Not Me But You”</p>
         </div>
 
-        <button className="login-btn">
-          Login
-        </button>
+        <div className="header-actions">
+          <div className="header-visits">
+            <span>👁️</span>
+            <div>
+              <strong>{visits}</strong>
+              <small>Visits</small>
+            </div>
+          </div>
 
-      </div>
+          <Link to="/login" className="login-btn">
+            Login
+          </Link>
+        </div>
+      </header>
 
-    </header>
+      <nav className="nav-menu">
+        <Link to="/">Home</Link>
+        <Link to="/about">About Us</Link>
+        <Link to="/units">Units</Link>
+       <Link to="/activities">Activities</Link>
+       <Link to="/contact">Contact</Link>
+      </nav>
+    </>
   );
 }
 

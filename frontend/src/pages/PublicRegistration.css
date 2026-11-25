@@ -1,0 +1,150 @@
+.public-registration-page {
+  min-height: 100vh;
+  background: #f3f6f9;
+  color: #1f2937;
+  font-family: inherit;
+}
+
+.registration-header {
+  background: #123d2a;
+  color: white;
+  padding: 18px 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.registration-brand,
+.registration-home-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.registration-container {
+  width: min(760px, 92%);
+  margin: 40px auto;
+}
+
+.registration-heading {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.registration-eyebrow {
+  color: #16804a;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.registration-heading h1 {
+  margin: 10px 0;
+  color: #123d2a;
+}
+
+.registration-form {
+  background: white;
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: 0 5px 24px rgba(0, 0, 0, 0.07);
+}
+
+.registration-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.registration-grid label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-weight: 600;
+}
+
+.registration-grid input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font: inherit;
+  font-weight: 400;
+}
+
+.registration-grid input:focus {
+  outline: 2px solid #16804a;
+  border-color: #16804a;
+}
+
+.registration-full-width {
+  grid-column: 1 / -1;
+}
+
+.registration-submit {
+  width: 100%;
+  margin-top: 25px;
+  padding: 14px;
+  background: #16804a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.registration-submit:hover {
+  background: #11653a;
+}
+
+.registration-submit:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.registration-message {
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 18px;
+}
+
+.registration-message.error {
+  color: #991b1b;
+  background: #fee2e2;
+}
+
+.registration-message.success {
+  color: #166534;
+  background: #dcfce7;
+}
+
+.registration-note,
+.registration-footer {
+  text-align: center;
+  color: #6b7280;
+  margin-top: 18px;
+}
+
+.registration-footer a {
+  color: #16804a;
+  font-weight: 700;
+}
+
+@media (max-width: 600px) {
+  .registration-container {
+    margin: 25px auto;
+  }
+
+  .registration-form {
+    padding: 20px;
+  }
+
+  .registration-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .registration-full-width {
+    grid-column: auto;
+  }
+}
