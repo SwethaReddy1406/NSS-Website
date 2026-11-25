@@ -1,3 +1,4 @@
+
 package com.rgukt.nss.volunteers;
 
 import org.springframework.http.ResponseEntity;
@@ -26,7 +27,7 @@ public class VolunteerActivationController {
                     activationService.generateActivationToken(volunteerId);
 
             String activationUrl =
-                    "http://localhost:5173/activate?token=" + token;
+                    "https://nss-website-1-z1sv.onrender.com/activate?token=" + token;
 
             return ResponseEntity.ok(Map.of(
                     "success", true,
@@ -71,3 +72,4 @@ public class VolunteerActivationController {
             String password
     ) {}
 }
+
