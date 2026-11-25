@@ -140,7 +140,7 @@ public class SecurityConfig {
             new CorsConfiguration();
 
         configuration.setAllowedOrigins(
-            List.of("http://localhost:5173","http://localhost:5174")
+            List.of("http://localhost:5173","http://localhost:5174","https://nss-website-1-z1sv.onrender.com")
         );
 
         configuration.setAllowCredentials(true);
